@@ -13,8 +13,8 @@ import time
 import logging
 import threading
 
-host = 'tunnel.qydev.com' # Ngrok服务器地址
-port = 4443 # 端口
+host = 'rm.wegox.cn' # Ngrok服务器地址
+port = 8888 # 端口
 bufsize = 1024 # 吞吐量
 
 dualstack = 'IPv4/IPv6' # 服务连接协议 [IPv4/IPv6=双栈]
@@ -23,11 +23,11 @@ dualstack_or = 0 # 本地转发协议 [0=双栈, 1=IPv4, 2=IPv6]
 Tunnels = list() # 全局渠道赋值
 body = dict()
 body['protocol'] = 'http'
-body['hostname'] = 'www.xxx.com'
+body['hostname'] = 'shop.wegox.cn'
 body['subdomain'] = ''
 body['rport'] = 0
 body['lhost'] = '127.0.0.1'
-body['lport'] = 80
+body['lport'] = 18000
 Tunnels.append(body) # 加入渠道队列
 
 body = dict()
@@ -381,7 +381,7 @@ if __name__ == '__main__':
                 mainsocket = connectremote(host, port)
                 if mainsocket == False:
                     logger = logging.getLogger('%s' % 'client')
-                    logger.info('connect failed...!')
+                    logger.info('connect failed...! %s %s' % (host, port))
                     time.sleep(10)
                     continue
                 thread = threading.Thread(target = HKClient, args = (mainsocket, 0, 1))
