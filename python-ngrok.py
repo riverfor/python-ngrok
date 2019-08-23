@@ -23,7 +23,7 @@ dualstack_or = 0 # 本地转发协议 [0=双栈, 1=IPv4, 2=IPv6]
 Tunnels = list() # 全局渠道赋值
 body = dict()
 body['protocol'] = 'http'
-body['hostname'] = 'shop.wegox.cn'
+body['hostname'] = 'dev-min.wegox.cn'
 body['subdomain'] = ''
 body['rport'] = 0
 body['lhost'] = '127.0.0.1'
